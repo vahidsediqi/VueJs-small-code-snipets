@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue App</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+    <div id="vue-app">
+       <p>Name: {{ name }}</p>
+       <p>Job: {{ job }}</p>
+       <p>{{ greet() }}</p>
+       <ul>
+           <span>Skills</span>
+           <li v-for='skill in skills'>
+               {{skill}}
+           </li>
+       </ul>
+       <a v-bind:href="website">Portfolio</a>
+       <input type="text" v-bind:value="name">
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue App</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+
+    <div id="app">
+        <h1>Looping in for</h1>
+        <div>
+            <h2>Our Latest Courses</h2>
+            <ul>
+                <li v-for="course in courses">{{ course }}</li>
+            </ul>
+            <form >
+                <input  v-model="newCourse" type="text" placeholder="add new course">
+                <button v-on:click="addCourse">Add</button>
+            </form>
+        </div>
+
+        <div>
+            <h2>Our Book Store</h2>
+            <ul style="max-width: 250px;">
+                <li v-for="book in books">
+                    <p><strong>Title: </strong>{{ book.title }}</p>
+                    <p><strong>Author: </strong>{{ book.author }}</p>
+                    <p v-if="book.stock == 1"><strong>Remaining stock</strong> {{ book.stock }}</p>
+                    <hr />
+                </li>
+            </ul>
+            <form>
+                <input type="text" v-model="newBooks.title" placeholder="Book Title..">
+                <br>
+                <input v-model="newBooks.author" type="text" placeholder="Book Author">
+                <br>
+                <input v-model="newBooks.stock" type="text" placeholder="Stock">
+                <br>
+                <button v-on:click="addNewBook">Submit</button>
+            </form>
+        </div>
+      
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
